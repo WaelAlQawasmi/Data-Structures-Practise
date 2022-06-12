@@ -3,6 +3,8 @@
  */
 package test;
 
+import java.util.LinkedList;
+
 public class App {
     public String getGreeting() {
         return "Hello World!";
@@ -10,18 +12,98 @@ public class App {
 
     public static void main(String[] args) {
       //  System.out.println(new App().getGreeting());
-linkss<Integer> testN=new linkss<>();
-//
-Node node1=new Node<>(1);
-//Node node2=new Node<>(2);
-//Node node3=new Node<>(3);
-//Node node4=new Node<>(4);
-//
-        testN.append(1);
-testN.insert(5);
-testN.printAll();
+//linkss<Integer> testN=new linkss<>();
+////
+//Node node1=new Node<>(1);
+////Node node2=new Node<>(2);
+////Node node3=new Node<>(3);
+////Node node4=new Node<>(4);
+////
+//        testN.append(1);
+//testN.insert(5);
+//testN.printAll();
 //System.out.println(testN.toString());
 
 
+//
+        tree binaryTree=new tree();
+
+//
+       binaryTree.setRoot(new treeNode(5));
+////
+        binaryTree.getRoot().setLEFT(new treeNode(5));
+        binaryTree.getRoot().setRIGHT(new treeNode(5));
+
+        binaryTree.getRoot().getLEFT().setLEFT(new treeNode(5));
+        binaryTree.getRoot().getLEFT().getLEFT().setLEFT(new treeNode(5));
+
+
+        tree binaryTree2=new tree();
+
+//
+        binaryTree2.setRoot(new treeNode(10));
+////
+        binaryTree2.getRoot().setLEFT(new treeNode(10));
+        binaryTree2.getRoot().getLEFT().setLEFT(new treeNode(10));
+        binaryTree2.getRoot().getLEFT().getLEFT().setLEFT(new treeNode(5));
+        binaryTree2.getRoot().setRIGHT(new treeNode(5));
+       tree.bfs2( tree.Merg(binaryTree.root,binaryTree.root));
+//
+//
+//        binaryTree.getRoot().setRight(new BTNode("e"));
+//
+//        binaryTree.inOrder( binaryTree.getRoot());
+//
+//binaryTree.preOrder(binaryTree.root);
+//System.out.println("INORDER");
+//        binaryTree.inOrder(binaryTree.root);
+//        System.out.println("post");
+//        binaryTree.postOrder(binaryTree.root);
+//        System.out.println("MAX");
+//     System.out.println(   binaryTree.Maximam());
+//
+//        System.out.println("secand max");
+//        System.out.println(   binaryTree.theSecandMax());
+//        System.out.println("bfs.....");
+ //  binaryTree.bfs2(binaryTree.root);
+   // System.out.println("pwm list");
+//    linkss newL=new linkss<>();
+//    newL.insert("A");
+//        newL.insert("B");
+//        newL.insert("B");
+//        newL.insert("A");
+     //   System.out.println(newL.pwp());
+
+      //  System.out.println("pwm ZZZ");
+
+//        linkss LL=new linkss<>();
+//        LL.insert("A");
+//        LL.insert("B");
+//        LL.insert("B");
+//        LL.insert("A");
+
+      //  System.out.println(newL.poli(LL));
+
+//        LINKedLIst LL=new LINKedLIst();
+//        LL.insert(1);
+//        LL.insert(2);
+//        LL.insert(9);
+//        LL.insert(4);
+//        LL.insert(5);
+//
+//
+//   LinkNode pointer= LL.head;
+//       while (pointer!=null){
+//           System.out.println(pointer.value);
+//           pointer=pointer.next;
+//       }
+//
+//System.out.println(LINKedLIst.Soted(LL));
+
+        //////
+//
+
     }
+
+
 }
