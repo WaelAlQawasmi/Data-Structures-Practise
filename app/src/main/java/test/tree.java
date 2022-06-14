@@ -18,42 +18,46 @@ public class tree {
 
     }
 
-    public static void preOrder(treeNode Node){
-        if(Node!=null){
+    public static void preOrder(treeNode Node) {
+        if (Node != null) {
             System.out.println(Node.getValue());
-            if(Node.getLEFT()!=null){
-            preOrder(Node.getLEFT());}
-            if(Node.getRIGHT()!=null){
-            preOrder(Node.getRIGHT());}
+            if (Node.getLEFT() != null) {
+                preOrder(Node.getLEFT());
+            }
+            if (Node.getRIGHT() != null) {
+                preOrder(Node.getRIGHT());
+            }
         }
     }
 
 
-    public void inOrder(treeNode Node){
-        if(Node!=null){
+    public void inOrder(treeNode Node) {
+        if (Node != null) {
 
-            if(Node.getLEFT()!=null){
+            if (Node.getLEFT() != null) {
                 inOrder(Node.getLEFT());
 
             }
             System.out.println(Node.value);
 
-            if(Node.getRIGHT()!=null){
-                inOrder(Node.getRIGHT());}
+            if (Node.getRIGHT() != null) {
+                inOrder(Node.getRIGHT());
+            }
         }
     }
 
-    public void postOrder(treeNode Node){
-        if(Node!=null){
+    public void postOrder(treeNode Node) {
+        if (Node != null) {
 
-            if(Node.getLEFT()!=null){
+            if (Node.getLEFT() != null) {
                 postOrder(Node.getLEFT());
 
             }
 
 
-            if(Node.getRIGHT()!=null){
-                postOrder(Node.getRIGHT());}
+            if (Node.getRIGHT() != null) {
+                postOrder(Node.getRIGHT());
+            }
             System.out.println(Node.value);
         }
     }
@@ -62,40 +66,42 @@ public class tree {
     int max;
 
 
-    public int Maximam(){
+    public int Maximam() {
 
-         max=   root.getValue();
+        max = root.getValue();
         maximmam(root);
         return max;
 
 
     }
 
-    public void maximmam(treeNode Node){
-        if(Node!=null){
-       if(Node.getValue()>max){
-           max=(int)Node.getValue();
-       }
+    public void maximmam(treeNode Node) {
+        if (Node != null) {
+            if (Node.getValue() > max) {
+                max = (int) Node.getValue();
+            }
 
-       maximmam(Node.getRIGHT());
-        maximmam(Node.getLEFT());
-    }}
-int[]maximam= {Integer.MIN_VALUE,Integer.MIN_VALUE};
-    public int theSecandMax(){
+            maximmam(Node.getRIGHT());
+            maximmam(Node.getLEFT());
+        }
+    }
+
+    int[] maximam = {Integer.MIN_VALUE, Integer.MIN_VALUE};
+
+    public int theSecandMax() {
         theSecandMaxRecar(this.root);
         return maximam[1];
     }
 
-    public void theSecandMaxRecar(treeNode Node){
-        if(Node!=null){
-           if(Node.getValue()>maximam[0]){
-               maximam[1]=maximam[0];
-               maximam[0]=Node.getValue();
+    public void theSecandMaxRecar(treeNode Node) {
+        if (Node != null) {
+            if (Node.getValue() > maximam[0]) {
+                maximam[1] = maximam[0];
+                maximam[0] = Node.getValue();
 
-           }
-           else if(Node.getValue()>maximam[1]){
-               maximam[1]=Node.getValue();
-           }
+            } else if (Node.getValue() > maximam[1]) {
+                maximam[1] = Node.getValue();
+            }
             theSecandMaxRecar(Node.getLEFT());
             theSecandMaxRecar(Node.getRIGHT());
         }
@@ -103,57 +109,87 @@ int[]maximam= {Integer.MIN_VALUE,Integer.MIN_VALUE};
     }
 
 
-    public void bfs(treeNode node){
-        queue queue=new queue<>();
+    public void bfs(treeNode node) {
+        queue queue = new queue<>();
 
         queue.enqeue(new Node<>(node));
-       while (!queue.isEmpty()){
-           treeNode temp= (treeNode) queue.deqeue();
-          System.out.println( temp.getValue());
-          if(temp.getRIGHT()!=null){
-              queue.enqeue(new Node(temp.getRIGHT()));
-          }
+        while (!queue.isEmpty()) {
+            treeNode temp = (treeNode) queue.deqeue();
+            System.out.println(temp.getValue());
+            if (temp.getRIGHT() != null) {
+                queue.enqeue(new Node(temp.getRIGHT()));
+            }
 
-           if(temp.getLEFT()!=null){
-               queue.enqeue(new Node(temp.getLEFT()));
-           }
-       }
+            if (temp.getLEFT() != null) {
+                queue.enqeue(new Node(temp.getLEFT()));
+            }
+        }
     }
 
-    public static void bfs2(treeNode root){
-        Queue <treeNode> queue=new LinkedList<>();
+    public static void bfs2(treeNode root) {
+        Queue<treeNode> queue = new LinkedList<>();
         queue.add(root);
-        while (!queue.isEmpty()){
-            treeNode temp=queue.poll();
+        while (!queue.isEmpty()) {
+            treeNode temp = queue.poll();
             System.out.println(temp.getValue());
-            if(temp.getLEFT()!=null){
+            if (temp.getLEFT() != null) {
                 queue.add(temp.getLEFT());
             }
-            if(temp.getRIGHT()!=null){
+            if (temp.getRIGHT() != null) {
                 queue.add(temp.getRIGHT());
             }
         }
     }
 
-    public static treeNode Merg(treeNode tree1, treeNode tree2){
-        if(tree1==null){
+    public static treeNode Merg(treeNode tree1, treeNode tree2) {
+        if (tree1 == null) {
             return tree2;
         }
 
-        if(tree2==null){
+        if (tree2 == null) {
             return tree1;
         }
-      tree1.setValue(tree1.value+tree2.value);
-  tree1.setLEFT(Merg(tree1.getLEFT(),tree2.getLEFT()));
-     tree1.setRIGHT( Merg(tree1.getRIGHT(),tree2.getRIGHT()));
+        tree1.setValue(tree1.value + tree2.value);
+        tree1.setLEFT(Merg(tree1.getLEFT(), tree2.getLEFT()));
+        tree1.setRIGHT(Merg(tree1.getRIGHT(), tree2.getRIGHT()));
         return tree1;
     }
 
 
-    public void preorder(treeNode t){
+    public void preorder(treeNode t) {
 
     }
 
 
+    public int sumation(treeNode root) {
+        if (root == null) {
+            return 0;
+        }
+        return root.getValue() + sumation(root.getLEFT()) + sumation(root.getRIGHT());
+
     }
+
+    public static boolean identical(treeNode root1, treeNode root2) {
+        if (root1 != null && root2 != null) {
+            if (root1.getValue() != root2.getValue()) {
+                return false;
+            }
+            if (!identical(root1.getLEFT(), root2.getLEFT())) {
+                return false;
+            }
+            if (!identical(root1.getLEFT(), root2.getLEFT())) {
+                return false;
+            }
+        } else if (root1 == null && root2 != null) {
+            return false;
+        } else if (root2 == null && root1 != null) {
+            return false;
+        }
+
+
+        return true;
+    }
+
+
+}
 
