@@ -3,6 +3,7 @@
  */
 package test;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 
 public class App {
@@ -40,14 +41,19 @@ public class App {
 
         tree binaryTree2=new tree();
 
+
+        binaryTree2.setRoot(new treeNode(5));
 //
-        binaryTree2.setRoot(new treeNode(10));
-////
-        binaryTree2.getRoot().setLEFT(new treeNode(10));
-        binaryTree2.getRoot().getLEFT().setLEFT(new treeNode(10));
-        binaryTree2.getRoot().getLEFT().getLEFT().setLEFT(new treeNode(5));
-        binaryTree2.getRoot().setRIGHT(new treeNode(5));
-       tree.bfs2( tree.Merg(binaryTree.root,binaryTree.root));
+        binaryTree2.getRoot().setLEFT(new treeNode(5));
+        binaryTree2.getRoot().getLEFT().setLEFT(new treeNode(5));
+      //  binaryTree2.getRoot().getLEFT().getLEFT().setLEFT(new treeNode(5));
+      //  binaryTree2.getRoot().setRIGHT(new treeNode(5));
+      // tree.bfs2( tree.Merg(binaryTree.root,binaryTree.root));
+
+      System.out.println(  binaryTree.sumation( binaryTree.root));
+
+
+        System.out.println( tree.identical(binaryTree.root,binaryTree2.root));
 //
 //
 //        binaryTree.getRoot().setRight(new BTNode("e"));
@@ -102,6 +108,31 @@ public class App {
 
         //////
 //
+
+        Graph graph=new Graph();
+
+
+
+        graph.addNode("Pandora");
+        graph.addNode("Arendelle");
+        graph.addNode("Metroville");
+        graph.addNode("Monstroplolis");
+        graph.addNode("Narnia");
+        graph.addNode("Naboo");
+
+        graph.addEdge(new Vertex("Pandora"),new Vertex("Pandora"));
+        graph.addEdge(new Vertex("Metroville"),new Vertex("Arendelle"));
+        graph.addEdge(new Vertex("Monstroplolis"),new Vertex("Arendelle"));
+        graph.addEdge(new Vertex("Monstroplolis"),new Vertex("Metroville"));
+        graph.addEdge(new Vertex("Metroville"),new Vertex("Narnia"));
+
+        graph.addEdge(new Vertex("Naboo"),new Vertex("Metroville"));
+        graph.addEdge(new Vertex("Naboo"),new Vertex("Monstroplolis"));
+        graph.addEdge(new Vertex("Narnia"),new Vertex("Naboo"));
+
+        graph.dsf(new Vertex("Pandora"),new ArrayList<>());
+
+
 
     }
 
